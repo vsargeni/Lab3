@@ -47,11 +47,11 @@ public class Hand_Test {
 		Hand h = new Hand();
  
 		
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TEN,1));
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.JACK,1));
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.QUEEN,1));
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.KING,1));
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.ACE,1));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TEN,1,false));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.JACK,2,false));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.QUEEN,3,false));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.KING,4,false));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.ACE,5,false));
 		
 		
 		try {
@@ -68,11 +68,11 @@ public class Hand_Test {
 	@Test
 	public void TestStraightFlush() {
 		Hand h = new Hand();
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TEN,1));
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.JACK,1));
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.QUEEN,1));
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.KING,1));
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.NINE,1));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TEN,1,false));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.JACK,1,false));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.QUEEN,1,false));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.KING,1,false));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.NINE,1,false));
 		
 		try {
 			h = h.EvaluateHand();
@@ -85,11 +85,11 @@ public class Hand_Test {
 	@Test
 	public void TestFourOfAKind() {
 		Hand h = new Hand();
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.TEN,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.TEN,1));
-		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.TEN,1));
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TEN,1));
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.ACE,1));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.TEN,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.TEN,1,false));
+		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.TEN,1,false));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TEN,1,false));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.ACE,1,false));
 		
 		try {
 			h = h.EvaluateHand();
@@ -104,11 +104,11 @@ public class Hand_Test {
 	@Test
 	public void TestFourOfAKind2() {
 		Hand h = new Hand();
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.ACE,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.ACE,1));
-		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.ACE,1));
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.ACE,1));
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TEN,1));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.ACE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.ACE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.ACE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.ACE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TEN,1,false));
 		
 		try {
 			h = h.EvaluateHand();
@@ -123,11 +123,11 @@ public class Hand_Test {
 	@Test
 	public void TestFullHouse1() {
 		Hand h = new Hand();
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.TEN,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.TEN,1));
-		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.TEN,1));
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TWO,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.TWO,1));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.TEN,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.TEN,1,false));
+		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.TEN,1,false));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TWO,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.TWO,1,false));
 		
 		try {
 			h = h.EvaluateHand();
@@ -143,11 +143,11 @@ public class Hand_Test {
 	@Test
 	public void TestFullHouse2() {
 		Hand h = new Hand();
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.TWO,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.TWO,1));
-		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.TWO,1));
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TEN,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.TEN,1));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.TWO,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.TWO,1,false));
+		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.TWO,1,false));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TEN,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.TEN,1,false));
 		
 		try {
 			h = h.EvaluateHand();
@@ -163,11 +163,11 @@ public class Hand_Test {
 	@Test
 	public void TestFlush() {
 		Hand h = new Hand();
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.ACE,1));
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.TWO,1));
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.THREE,1));
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.FOUR,1));
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.KING,1));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.ACE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.TWO,1,false));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.THREE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.FOUR,1,false));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.KING,1,false));
 		
 		try {
 			h = h.EvaluateHand();
@@ -182,11 +182,11 @@ public class Hand_Test {
 	@Test
 	public void TestStraight1() {
 		Hand h = new Hand();
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.THREE,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.TWO,1));
-		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.FOUR,1));
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.FIVE,1));
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.SIX,1));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.THREE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.TWO,1,false));
+		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.FOUR,1,false));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.FIVE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.SIX,1,false));
 		
 		try {
 			h = h.EvaluateHand();
@@ -202,11 +202,11 @@ public class Hand_Test {
 	@Test
 	public void TestStraight2() {
 		Hand h = new Hand();
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.ACE,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.TWO,1));
-		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.THREE,1));
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.FOUR,1));
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.FIVE,1));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.ACE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.TWO,1,false));
+		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.THREE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.FOUR,1,false));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.FIVE,1,false));
 		
 		try {
 			h = h.EvaluateHand();
@@ -222,11 +222,11 @@ public class Hand_Test {
 	@Test
 	public void TestStraight3() {
 		Hand h = new Hand();
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.ACE,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.SIX,1));
-		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.THREE,1));
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.FOUR,1));
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.FIVE,1));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.ACE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.SIX,1,false));
+		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.THREE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.FOUR,1,false));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.FIVE,1,false));
 		
 		try {
 			h = h.EvaluateHand();
@@ -243,11 +243,11 @@ public class Hand_Test {
 	@Test
 	public void ThreeOfAKind1() {
 		Hand h = new Hand();
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.TWO,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.TWO,1));
-		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.TWO,1));
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TEN,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.KING,1));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.TWO,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.TWO,1,false));
+		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.TWO,1,false));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TEN,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.KING,1,false));
 		
 		try {
 			h = h.EvaluateHand();
@@ -262,11 +262,11 @@ public class Hand_Test {
 	@Test
 	public void ThreeOfAKind2() {
 		Hand h = new Hand();
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TWO,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.KING,1));
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.THREE,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.THREE,1));
-		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.THREE,1));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TWO,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.KING,1,false));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.THREE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.THREE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.THREE,1,false));
 		
 		try {
 			h = h.EvaluateHand();
@@ -281,11 +281,11 @@ public class Hand_Test {
 	@Test
 	public void ThreeOfAKind3() {
 		Hand h = new Hand();
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.THREE,1));
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.FOUR,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.FOUR,1));
-		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.FOUR,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.TWO,1));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.THREE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.FOUR,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.FOUR,1,false));
+		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.FOUR,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.TWO,1,false));
 		
 		try {
 			h = h.EvaluateHand();
@@ -300,11 +300,11 @@ public class Hand_Test {
 	@Test
 	public void TwoPair1() {
 		Hand h = new Hand();
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TEN,1));
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.THREE,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.THREE,1));
-		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.TEN,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.KING,1));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TEN,1,false));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.THREE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.THREE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.TEN,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.KING,1,false));
 		
 		try {
 			h = h.EvaluateHand();
@@ -320,11 +320,11 @@ public class Hand_Test {
 	@Test
 	public void TwoPair2() {
 		Hand h = new Hand();
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TEN,1));
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.THREE,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.THREE,1));
-		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.TEN,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.SIX,1));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TEN,1,false));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.THREE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.THREE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.TEN,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.SIX,1,false));
 		
 		try {
 			h = h.EvaluateHand();
@@ -340,11 +340,11 @@ public class Hand_Test {
 	@Test
 	public void TwoPair3() {
 		Hand h = new Hand();
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TEN,1));
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.THREE,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.THREE,1));
-		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.TEN,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.TWO,1));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TEN,1,false));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.THREE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.THREE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.TEN,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.TWO,1,false));
 		
 		try {
 			h = h.EvaluateHand();
@@ -360,11 +360,11 @@ public class Hand_Test {
 	@Test
 	public void Pair1() {
 		Hand h = new Hand();
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TWO,1));
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.THREE,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.FOUR,1));
-		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.KING,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.KING,1));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TWO,1,false));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.THREE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.FOUR,1,false));
+		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.KING,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.KING,1,false));
 		
 		try {
 			h = h.EvaluateHand();
@@ -380,11 +380,11 @@ public class Hand_Test {
 	@Test
 	public void Pair2() {
 		Hand h = new Hand();
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.ACE,1));
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.THREE,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.FOUR,1));
-		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.KING,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.KING,1));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.ACE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.THREE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.FOUR,1,false));
+		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.KING,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.KING,1,false));
 		
 		try {
 			h = h.EvaluateHand();
@@ -400,11 +400,11 @@ public class Hand_Test {
 	@Test
 	public void Pair3() {
 		Hand h = new Hand();
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.ACE,1));
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.THREE,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.JACK,1));
-		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.JACK,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.KING,1));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.ACE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.THREE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.JACK,1,false));
+		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.JACK,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.KING,1,false));
 		
 		try {
 			h = h.EvaluateHand();
@@ -420,11 +420,11 @@ public class Hand_Test {
 	@Test
 	public void Pair4() {
 		Hand h = new Hand();
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TWO,1));
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.TWO,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.FOUR,1));
-		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.JACK,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.KING,1));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TWO,1,false));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.TWO,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.FOUR,1,false));
+		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.JACK,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.KING,1,false));
 		
 		try {
 			h = h.EvaluateHand();
@@ -440,11 +440,11 @@ public class Hand_Test {
 	@Test
 	public void HighCard() {
 		Hand h = new Hand();
-		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TWO,1));
-		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.THREE,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.FOUR,1));
-		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.JACK,1));
-		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.KING,1));
+		h.AddToCardsInHand(new Card(eSuit.CLUBS, eRank.TWO,1,false));
+		h.AddToCardsInHand(new Card(eSuit.SPADES, eRank.THREE,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.FOUR,1,false));
+		h.AddToCardsInHand(new Card(eSuit.DIAMONDS, eRank.JACK,1,false));
+		h.AddToCardsInHand(new Card(eSuit.HEARTS, eRank.KING,1,false));
 		
 		try {
 			h = h.EvaluateHand();

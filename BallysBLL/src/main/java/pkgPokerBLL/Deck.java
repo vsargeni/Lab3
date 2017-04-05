@@ -11,6 +11,11 @@ public class Deck {
 
 	private UUID DeckID;
 	private ArrayList<Card> DeckCards = new ArrayList<Card>();
+	
+
+	public ArrayList<Card> getDeckCards() {
+		return DeckCards;
+	}
 
 	public Deck() {
 
@@ -18,9 +23,10 @@ public class Deck {
 		int iCardNbr = 0;
 		for (eSuit suit : eSuit.values()) {
 			for (eRank rank : eRank.values()) {
-				//if ((suit != eSuit.JOKER) && (rank != eRank.JOKER)) {
-					DeckCards.add(new Card(rank, suit, ++iCardNbr));
-				//}
+				if ((suit != eSuit.JOKER) && (rank != eRank.JOKER)) { // need
+																		// joker
+					DeckCards.add(new Card(rank, suit, ++iCardNbr, false));
+				}
 			}
 		}
 		Collections.shuffle(DeckCards);
@@ -29,5 +35,12 @@ public class Deck {
 	public Card DrawCard() {
 
 		return DeckCards.remove(0);
+	}
+
+	public Deck(int numOfJokers) {
+		for (int i = 0; i < numOfJokers; i++) {
+			DeckCards.add(new Card());
+		}
+		Collections.shuffle(DeckCards);
 	}
 }

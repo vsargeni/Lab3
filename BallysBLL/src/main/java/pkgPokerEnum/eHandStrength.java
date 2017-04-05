@@ -12,6 +12,12 @@ public enum eHandStrength {
 			return "Straight Flush";
 		}
 	},
+	FiveOfAKind(85,"isHandFiveOfAKind"){
+		public String toString(){
+			return "Five of a kind";
+		}
+	},
+
 	FourOfAKind(80, "isHandFourOfAKind") {
 		public String toString() {
 			return "Four of a Kind";

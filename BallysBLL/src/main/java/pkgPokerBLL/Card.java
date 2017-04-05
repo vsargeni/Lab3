@@ -10,20 +10,23 @@ public class Card implements Comparable {
 	private eRank eRank;
 	private eSuit eSuit;
 	private int iCardNbr;
+	private boolean isWild=false;
 
 	public Card() {
 	}
 
-	public Card(eRank eRank, eSuit eSuit, int iCardNbr) {
+	public Card(eRank eRank, eSuit eSuit, int iCardNbr,boolean isWild) {
 		this.eRank = eRank;
 		this.eSuit = eSuit;
 		this.iCardNbr = iCardNbr;
+		this.isWild = isWild;
 	}
 
-	public Card(eSuit eSuit, eRank eRank, int iCardNbr) {
+	public Card(eSuit eSuit, eRank eRank, int iCardNbr, boolean isWild) {
 		this.eRank = eRank;
 		this.eSuit = eSuit;
 		this.iCardNbr = iCardNbr;
+		this.isWild=isWild;
 	}
 
 	public eRank geteRank() {
