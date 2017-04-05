@@ -48,19 +48,16 @@ public class Hand {
 
 		for (Hand hand : ExplodedHands) {
 			hand = Hand.EvaluateHand(hand);
+			
 		}
 
-		if (h.getCardsInHand().size() != 5) {
-			throw new HandException(h);
-		}
+
 		// Figure out best hand
 		Collections.sort(ExplodedHands, Hand.HandRank);
 
 		// Return best hand.
 		// TODO: Fix... what to do if there is a tie?
-		if(ExplodedHands.get(0).getHandScore()==ExplodedHands.get(1).getHandScore()){
-			throw new HandException(h);
-		}
+
 		
 		return ExplodedHands.get(0);
 	}
@@ -149,12 +146,18 @@ public class Hand {
 
 			}
 		}
+		else{
+			ReturnHands.add(h);
+			
+		}
 
 		return ReturnHands;
 	}
 
-	private static Hand EvaluateHand(Hand h) {
-
+	private static Hand EvaluateHand(Hand h) throws HandException {
+		if (h.getCardsInHand().size() != 5) {
+			throw new HandException(h);
+		}
 		Collections.sort(h.getCardsInHand());
 
 		// Another way to sort
@@ -391,7 +394,32 @@ public class Hand {
 
 		return isThreeOfAKind;
 	}
-
+	public static boolean isHandFiveOfAKind(Hand h, HandScore hs) {
+		boolean isFiveKind = false;
+		ArrayList kickers = new ArrayList<Card>();
+		Collections.sort(h.getCardsInHand());
+		if ( (h.getCardsInHand().get(0).geteRank() == h.getCardsInHand().get(4).geteRank())) {
+			hs.setHandStrength(eHandStrength.FiveOfAKind);
+			hs.setKickers(kickers);
+			hs.setHiHand(h.getCardsInHand().get(0).geteRank());
+			hs.setLoHand(null);
+			isFiveKind = true;
+		}
+		return isFiveKind;
+	}
+	
+	public String toString(){
+		String msg ="";
+		msg = msg + this.getCardsInHand().get(0) + " \n";
+		msg = msg + this.getCardsInHand().get(1) + " \n";
+		msg = msg + this.getCardsInHand().get(2) + " \n";
+		msg = msg + this.getCardsInHand().get(3) + " \n";
+		msg = msg + this.getCardsInHand().get(4) ;
+		return msg;
+		
+	}
+	
+	
 	public static boolean isHandTwoPair(Hand h, HandScore hs) {
 
 		boolean isHandTwoPair = false;
@@ -534,16 +562,7 @@ public class Hand {
 
 	}
 
-	public static boolean isHandFiveofAKind(Hand h, HandScore hs) {
-		boolean isFiveKind = false;
-		ArrayList kickers = new ArrayList<Card>();
-		if ((isHandFourOfAKind(h, hs) == true) && (h.getCardsInHand().get(0).geteRank() == eRank.JOKER)) {
-			hs.setHandStrength(eHandStrength.FiveOfAKind);
-			hs.setKickers(kickers);
-			isFiveKind = true;
-		}
-		return isFiveKind;
-	}
+
 
 	public static Comparator<Hand> HandRank = new Comparator<Hand>() {
 

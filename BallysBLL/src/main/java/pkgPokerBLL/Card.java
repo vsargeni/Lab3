@@ -14,7 +14,9 @@ public class Card implements Comparable {
 
 	public Card() {
 	}
-
+	public String toString(){
+		return this.eRank + " of "+ this.eSuit;
+	}
 	public Card(eRank eRank, eSuit eSuit, int iCardNbr,boolean isWild) {
 		this.eRank = eRank;
 		this.eSuit = eSuit;
